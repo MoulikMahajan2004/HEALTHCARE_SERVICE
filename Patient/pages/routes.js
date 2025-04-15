@@ -1,0 +1,10 @@
+const express=require('express');
+const router=express.Router();
+const controller= require('../controllers/auth.js');
+const messaging= require('../controllers/messaging.js');
+router.post('/register',controller.register);
+router.post('/login',controller.login);
+router.get('/schedule/:name',messaging.schedule);
+router.get('/schedules',messaging.schedules);
+router.post('/book/:doc/:day/:slot/:patient_name',messaging.book);
+module.exports=router;
